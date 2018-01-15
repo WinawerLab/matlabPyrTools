@@ -15,11 +15,16 @@
 
 % Eero Simoncelli, 8/96.
 
+% WinawerLab, 1/18: The original LVC code wants the user to run a compiled
+% version of this code rather than the .m file. We removed the mex version
+% and disabled the accompanying warning (below) because we had difficulties
+% synchronizing compiled version across multiple newer Mac computers.
+
 function res = pointOp(im, lut, origin, increment, warnings)
 
 %% NOTE: THIS CODE IS NOT ACTUALLY USED! (MEX FILE IS CALLED INSTEAD)
 
-fprintf(1,'WARNING: You should compile the MEX version of "pointOp.c",\n         found in the MEX subdirectory of matlabPyrTools, and put it in your matlab path.  It is MUCH faster.\n');
+%fprintf(1,'WARNING: You should compile the MEX version of "pointOp.c",\n         found in the MEX subdirectory of matlabPyrTools, and put it in your matlab path.  It is MUCH faster.\n');
 
 X = origin + increment*[0:size(lut(:),1)-1];
 Y = lut(:);
